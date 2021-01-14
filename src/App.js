@@ -4,6 +4,7 @@ import { Table } from "./components/Table";
 import { Button } from "./components/Button";
 import { firebaseApp } from "./firebase";
 import firebase from "firebase";
+// import { addStudentTofirebase } from "./components/addStudentTofirebase";
 const INITIAL_STUDENTS = [
   { id: 1, name: "Bob" },
   { id: 2, name: "Amy" }
@@ -47,6 +48,8 @@ function App() {
     setStudents([...students, { id: newStudentDocRef.id, name: studentName }]);
     setStudentName("");
   };
+
+
   /** 生徒の削除を行う処理 */
   const deleteStudent = async studentId => {
     setStudents(
@@ -98,6 +101,7 @@ function App() {
     //次へボタン
     setCurrentPageNum(currentPageNum + 1);
   };
+
   return (
     <div className="App" style={{ maxWidth: "80%", margin: "20px auto" }}>
       <div>
